@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2325600501055275601}
   - component: {fileID: 2325600501055275602}
+  - component: {fileID: 7472336323462226855}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2325600501055275600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.11, y: 0.32999992, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45,7 +46,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288bb78472fb2794fa293d47517ab51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _diePickupPrefab: {fileID: 7593414682216054468, guid: b2696366dc86b034ba19935ddb9235ea, type: 3}
   _health: 1
+  _contactDamage: 1
+--- !u!50 &7472336323462226855
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2325600501055275600}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2325600502529132888
 GameObject:
   m_ObjectHideFlags: 0

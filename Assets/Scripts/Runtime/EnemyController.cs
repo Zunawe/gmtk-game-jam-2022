@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
+  [SerializeField] private DiePickupController _diePickupPrefab;
   [SerializeField] private int _health;
+  [SerializeField] private int _contactDamage;
 
   void Start () {
     
@@ -11,6 +13,12 @@ public class EnemyController : MonoBehaviour {
 
   void Update () {
     
+  }
+
+  private void OnTriggerEnter2D (Collider2D other) {
+    if (other.gameObject.tag == "Player") {
+      PlayerController.Instance.Damage(_contactDamage);
+    }
   }
 
   public void Damage (int damage) {
@@ -23,6 +31,8 @@ public class EnemyController : MonoBehaviour {
   }
 
   private void Die () {
+    DiePickupController pickup = Instantiate(_diePickupPrefab, transform.position, Quaternion.identity);
+    pickup.Value = Random.Range(1, 7);
     Destroy(gameObject, 0.0f);
   }
 }
