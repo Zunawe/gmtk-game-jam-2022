@@ -6,14 +6,28 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour {
   public static PlayerController Instance { get; private set; }
 
-  [SerializeField] int _maxHealth;
-  [SerializeField] int _currentHealth;
-  [SerializeField] float _moveSpeed;
-  [SerializeField] GameObject _reticle;
-  [SerializeField] ProjectileController _projectilePrefab;
+  [Header("Health")]
+  [SerializeField] private int _maxHealth;
+  [SerializeField] private int _currentHealth;
+
+  [Header("Movement")]
+  [SerializeField] private float _moveSpeed;
+  private Vector2 _movement;
+
+  [Header("Dash")]
+  [SerializeField] private float _dashDistance;
+  [SerializeField] private float _dashTime;
+  private float _dashTimer;
+  private Vector3 _dashStartPosition;
+  private Vector3 _dashDestination;
+  private bool _isDashing;
+
+  [Header("Shooting")]
+  [SerializeField] private GameObject _reticle;
+  [SerializeField] private ProjectileController _projectilePrefab;
 
   private Rigidbody2D _rigidbody;
-  private Vector2 _movement;
+
   private int[] _dice = new int[6];
 
   void Awake () {
@@ -35,7 +49,12 @@ public class PlayerController : MonoBehaviour {
   }
 
   void FixedUpdate () {
-    _rigidbody.velocity = _movement * _moveSpeed;
+    if (_dashTimer > 0) {
+      _dashTimer -= Time.fixedDeltaTime;
+      _rigidbody.MovePosition(Vector3.Lerp(_dashStartPosition, _dashDestination, 1.0f - (_dashTimer / _dashTime)));
+    } else {
+      _rigidbody.velocity = _movement * _moveSpeed;
+    }
   }
 
   void OnDestroy () {
@@ -53,7 +72,13 @@ public class PlayerController : MonoBehaviour {
   }
 
   public void OnDash (InputAction.CallbackContext context) {
-    Debug.Log("Dash");
+    if (context.performed) {
+      if (_dashTimer <= 0) {
+        _dashStartPosition = transform.position;
+        _dashDestination = _dashStartPosition + ((new Vector3(_movement.x, _movement.y, 0)) * _dashDistance);
+        _dashTimer = _dashTime;
+      }
+    }
   }
 
   public void OnShoot (InputAction.CallbackContext context) {
