@@ -23,6 +23,6 @@ public class EnemyController : MonoBehaviour {
   }
 
   private void Die () {
-    Destroy(gameObject, 1.0f);
+    Destroy(gameObject, 0.0f);
   }
 }
