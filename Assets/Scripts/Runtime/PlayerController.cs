@@ -51,4 +51,8 @@ public class PlayerController : MonoBehaviour {
   public void OnDash (InputAction.CallbackContext context) {
     Debug.Log("Dash");
   }
+
+  public void OnShoot (InputAction.CallbackContext context) {
+    Debug.Log("Shoot");
+  }
 }
