@@ -6,16 +6,18 @@ public class EnemyController : MonoBehaviour {
   [SerializeField] private DiePickupController _diePickupPrefab;
   [SerializeField] private int _health;
   [SerializeField] private int _contactDamage;
+  [SerializeField] private float _moveSpeed;
+  private Rigidbody2D _rigidbody;
 
   void Start () {
-    
+    _rigidbody = GetComponent<Rigidbody2D>();
   }
 
-  void Update () {
-    
+  void FixedUpdate () {
+    _rigidbody.MovePosition(Vector3.MoveTowards(transform.position, PlayerController.Instance.transform.position, _moveSpeed * Time.fixedDeltaTime));
   }
 
-  private void OnTriggerEnter2D (Collider2D other) {
+  private void OnCollisionEnter2D (Collision2D other) {
     if (other.gameObject.tag == "Player") {
       PlayerController.Instance.Damage(_contactDamage);
     }
