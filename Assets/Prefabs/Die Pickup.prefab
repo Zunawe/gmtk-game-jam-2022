@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7593414682216054473}
   - component: {fileID: 7593414682216054468}
   m_Layer: 8
-  m_Name: DiePickup
+  m_Name: Die Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
