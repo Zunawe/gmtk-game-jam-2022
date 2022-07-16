@@ -95,11 +95,12 @@ public class PlayerController : MonoBehaviour {
 
   public void OnDash (InputAction.CallbackContext context) {
     if (context.performed) {
-      if (_dashTimer <= 0) {
+      if (_dice[0] >= 1 && _dashTimer <= 0) {
         AudioManager.Instance.PlaySfx("dash");
         _dashStartPosition = transform.position;
         _dashDestination = _dashStartPosition + ((new Vector3(_movement.x, _movement.y, 0)) * _dashDistance);
         _dashTimer = _dashTime;
+        RemoveDie(1);
       }
     }
   }
@@ -124,22 +125,26 @@ public class PlayerController : MonoBehaviour {
 
   public void OnHeal (InputAction.CallbackContext context) {
     if (context.performed) {
-      if (_dice[5] > 0) {
+      if (_dice[5] >= 6) {
         AudioManager.Instance.PlaySfx("heal");
-        _dice[5] -= 1;
         _currentHealth += 1;
+        RemoveDie(6, 6);
       }
     }
   }
 
-  public void AddDie (int value) {
+  public void AddDie (int value, int quantity = 1) {
     Debug.Log("Picked up die (" + value + ")");
-    ++_dice[value - 1];
+    if (_dice[value - 1] < Mathf.Ceil((float)value / 2.0f) * 2) {
+      _dice[value - 1] += quantity;
+      InventoryUiManager.Instance.UpdateInventory(_dice);
+    }
   }
 
-  public void RemoveDie (int value) {
+  public void RemoveDie (int value, int quantity = 1) {
     Debug.Log("Removed die (" + value + ")");
-    --_dice[value - 1];
+    _dice[value - 1] -= quantity;
+    InventoryUiManager.Instance.UpdateInventory(_dice);
   }
 
   public int[] GetDice () {

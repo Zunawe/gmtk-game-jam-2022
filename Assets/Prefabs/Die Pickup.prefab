@@ -115,6 +115,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Value: 3
+  DespawnTime: 10
+  SecondsBeforeFlash: 2
+  FlashCycleTime: 0.1
   _sprites:
   - {fileID: 1298048944, guid: 762a83a00d7f0184ab4c7a41fb6216f0, type: 3}
   - {fileID: 49535362, guid: 762a83a00d7f0184ab4c7a41fb6216f0, type: 3}
