@@ -15,7 +15,7 @@ public class DieCostController : MonoBehaviour {
       numDice += cost[i];
     }
     
-    float width = (_indicatorSprites[0].bounds.size.x * 0.25f) + 0.1f;
+    float width = (_indicatorSprites[0].bounds.size.x * 0.35f) + 0.1f;
 
     int k = 0;
     for (int i = 0; i < cost.Length; ++i) {
@@ -24,7 +24,7 @@ public class DieCostController : MonoBehaviour {
         GameObject indicator = new GameObject();
         indicator.transform.parent = transform;
         indicator.transform.localPosition = position;
-        indicator.transform.localScale = new Vector3(0.25f, 0.25f, 1.0f);
+        indicator.transform.localScale = new Vector3(0.35f, 0.35f, 1.0f);
         SpriteRenderer spriteRenderer = indicator.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = _indicatorSprites[i];
         ++k;

@@ -32,13 +32,14 @@ public class PlayerController : MonoBehaviour {
   [SerializeField] private ProjectileController _projectilePrefab;
 
   private Rigidbody2D _rigidbody;
+  private Animator _animator;
+  private bool _isFacingUp;
 
   private int[] _dice = new int[6];
 
   void Awake () {
     if (Instance == null) {
       Instance = this;
-      Initialize();
     } else {
       Destroy(gameObject);
     }
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour {
 
   void Start () {
     _rigidbody = GetComponent<Rigidbody2D>();
+    _animator = GetComponent<Animator>();
     _currentHealth = _maxHealth;
   }
 
@@ -58,6 +60,17 @@ public class PlayerController : MonoBehaviour {
         _footstepTimer = _footstepTime;
       }
     }
+
+    if (_isFacingUp && _rigidbody.velocity.y < 0) {
+      _isFacingUp = false;
+    } else if (!_isFacingUp && _rigidbody.velocity.y > 0) {
+      _isFacingUp = true;
+    }
+
+    _animator.SetFloat("VelocityX", _rigidbody.velocity.x);
+    _animator.SetBool("IsFacingUp", _isFacingUp);
+    _animator.SetFloat("SpeedX", Mathf.Abs(_rigidbody.velocity.x));
+    _animator.SetFloat("Speed", _rigidbody.velocity.magnitude);
   }
 
   void FixedUpdate () {
@@ -73,9 +86,6 @@ public class PlayerController : MonoBehaviour {
     if (Instance == this) {
       Instance = null;
     }
-  }
-
-  private void Initialize () {
   }
 
   public void OnMove (InputAction.CallbackContext context) {

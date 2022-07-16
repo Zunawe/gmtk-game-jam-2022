@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9fa64afdf042548439d7e0016e734c7b
+guid: 2a9470c381c54114ba5772abe0f7595b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerIdle_0
+      name: PlayerBack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 201f59e9aca1c434793bf8b9d525d1de
-      internalID: -1935337594
+      spriteID: 46b9883c19b2e47439ee38dd5021b992
+      internalID: -2131946321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerIdle_1
+      name: PlayerBack_1
       rect:
         serializedVersion: 2
         x: 64
@@ -133,20 +133,20 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7881162ee264fee449a1fd744a4b1685
-      internalID: 705669509
+      spriteID: 6e48ffe102314dd40bf7a4624e43614c
+      internalID: -902273238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerIdle_2
+      name: PlayerBack_2
       rect:
         serializedVersion: 2
         x: 128
@@ -154,14 +154,14 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00a8872f47cb8394eb4ac07bc97e878d
-      internalID: 1141179150
+      spriteID: 350f9b3dc8f8c5444a61917413a7b0d8
+      internalID: -1089211986
       vertices: []
       indices: 
       edges: []
@@ -177,9 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayerIdle_0: -1935337594
-      PlayerIdle_2: 1141179150
-      PlayerIdle_1: 705669509
+      PlayerBack_1: -902273238
+      PlayerBack_2: -1089211986
+      PlayerBack_0: -2131946321
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
