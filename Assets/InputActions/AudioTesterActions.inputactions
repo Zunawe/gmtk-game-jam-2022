@@ -1,0 +1,66 @@
+{
+    "name": "AudioTesterActions",
+    "maps": [
+        {
+            "name": "Default",
+            "id": "7b2da2e3-a7b1-4f6c-813e-ffe1e9c0528f",
+            "actions": [
+                {
+                    "name": "PlayMusic",
+                    "type": "Button",
+                    "id": "38690598-2946-49d2-8594-2be1a8a186ed",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PlaySound",
+                    "type": "Button",
+                    "id": "4b952b5e-8a6c-4c79-96dc-67911d4c57af",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "124bbf23-7853-44ae-a3fd-de4494cdf2de",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayMusic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a5baec5-4f13-4ccd-b864-ee9c7f2f8176",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlaySound",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
