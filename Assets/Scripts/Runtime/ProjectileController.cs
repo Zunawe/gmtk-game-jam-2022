@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour {
+  [SerializeField] private string _targetTag;
   [SerializeField] private float _moveSpeed;
   [SerializeField] private int _damage;
-  private Vector2 _direction = new Vector2(1.0f, 0);
-  public Vector2 Direction {
+  private Vector3 _direction = new Vector3(1.0f, 0, 0);
+  public Vector3 Direction {
     get { return _direction; }
     set {
       _direction = value;
@@ -21,13 +22,19 @@ public class ProjectileController : MonoBehaviour {
   }
 
   void FixedUpdate () {
-    _rigidbody.velocity = Direction * _moveSpeed;
+    _rigidbody.velocity = (Vector2)(Direction * _moveSpeed);
   }
 
   private void OnTriggerEnter2D (Collider2D other) {
-    if (other.tag == "Enemy") {
-      other.GetComponentInParent<EnemyController>().Damage(_damage);
+    if (_targetTag == other.tag) {
+      if (other.tag == "Enemy") {
+        other.GetComponentInParent<EnemyController>().Damage(_damage);
+      } else if (other.tag == "Player") {
+        PlayerController.Instance.Damage(_damage);
+      }
+      Destroy(gameObject);
+    } else if (other.tag != "Enemy" && other.tag != "Player") {
+      Destroy(gameObject);
     }
-    Destroy(gameObject);
   }
 }

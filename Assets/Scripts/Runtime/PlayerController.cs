@@ -83,8 +83,10 @@ public class PlayerController : MonoBehaviour {
   }
 
   public void OnShoot (InputAction.CallbackContext context) {
-    ProjectileController projectile = Instantiate(_projectilePrefab, _reticle.transform.position, Quaternion.identity);
-    projectile.Direction = _reticle.transform.localPosition;
+    if (context.performed) {
+      ProjectileController projectile = Instantiate(_projectilePrefab, _reticle.transform.position, Quaternion.identity);
+      projectile.Direction = _reticle.transform.localPosition;
+    }
   }
 
   public void OnAim (InputAction.CallbackContext context) {

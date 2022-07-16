@@ -93,7 +93,8 @@ MonoBehaviour:
   _diePickupPrefab: {fileID: 7593414682216054468, guid: b2696366dc86b034ba19935ddb9235ea, type: 3}
   _health: 1
   _contactDamage: 1
-  _moveSpeed: 2
+  _projectilePrefab: {fileID: 3927266431504440966, guid: d1ef2afe9a9ae86418dbabaf002528c1, type: 3}
+  _fireProjectileCooldown: 2
 --- !u!1 &2325600502529132888
 GameObject:
   m_ObjectHideFlags: 0

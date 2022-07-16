@@ -9,22 +9,50 @@ public class EnemyController : MonoBehaviour {
   [SerializeField] private int _contactDamage;
   private Rigidbody2D _rigidbody;
   private NavMeshAgent _agent;
+  private Vector3 _playerPositionOffset;
+
+  [SerializeField] private ProjectileController _projectilePrefab;
+  [SerializeField] private float _fireProjectileCooldown;
+  private float _fireProjectileTimer;
+
 
   void Start () {
     _rigidbody = GetComponent<Rigidbody2D>();
+  
     _agent = GetComponent<NavMeshAgent>();
     _agent.updateRotation = false;
     _agent.updateUpAxis = false;
+
+    _playerPositionOffset = (Vector3)(Random.insideUnitCircle);
+    _playerPositionOffset *= 5.0f;
+
+    _fireProjectileTimer =_fireProjectileCooldown;
   }
 
   void Update () {
-    _agent.destination = PlayerController.Instance.transform.position; 
+    Vector3 drift = (Vector3)(Random.insideUnitCircle) * 0.0001f;
+    _agent.destination = PlayerController.Instance.transform.position + _playerPositionOffset + drift;
+
+    _fireProjectileTimer -= Time.deltaTime;
+    if (_fireProjectileTimer <= 0) {
+      FireProjectile();
+      _fireProjectileTimer =_fireProjectileCooldown;
+    }
   }
 
   private void OnCollisionEnter2D (Collision2D other) {
     if (other.gameObject.tag == "Player") {
       PlayerController.Instance.Damage(_contactDamage);
     }
+  }
+
+  private void FireProjectile () {
+    Vector3 direction = PlayerController.Instance.transform.position - (transform.position + (Vector3)Random.insideUnitCircle);
+    direction.Normalize();
+    ProjectileController projectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity);
+    projectile.transform.position = transform.position + (direction * 0.8f);
+    projectile.transform.parent = null;
+    projectile.Direction = direction;
   }
 
   public void Damage (int damage) {
