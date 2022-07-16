@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour {
 
   private Dictionary<string, AudioSource> _music;
   private Dictionary<string, List<AudioSource>> _sfx;
+  private List<AudioSource> _playingSfx;
 
   void Awake () {
     if (Instance == null) {
@@ -28,6 +29,7 @@ public class AudioManager : MonoBehaviour {
 
       _music = new Dictionary<string, AudioSource>();
       _sfx = new Dictionary<string, List<AudioSource>>();
+      _playingSfx = new List<AudioSource>();
 
       foreach (AudioSource track in _musicContainer.transform.GetComponentsInChildren<AudioSource>()) {
         _music.Add(track.name, track);
@@ -72,12 +74,34 @@ public class AudioManager : MonoBehaviour {
     _music[name].Play();
   }
 
-  public void PlaySfx (string name) {
+  public AudioSource PlaySfx (string name) {
+    AudioSource player = PlaySfxLooping(name);
+    if (player == null) {
+      return null;
+    }
+
+    player.loop = false;
+    Destroy(player.gameObject, player.clip.length * 1.5f);
+
+    return player;
+  }
+
+  public AudioSource PlaySfxLooping (string name) {
+    if (string.IsNullOrEmpty(name)) {
+      return null;
+    }
+
     if (_sfx.ContainsKey(name)) {
       int i = Random.Range(0, _sfx[name].Count);
-      _sfx[name][i].Play();
+
+      AudioSource player = Instantiate(_sfx[name][i], transform.position, Quaternion.identity);
+      player.loop = true;
+      player.Play();
+
+      return player;
     } else {
-      Debug.Log("No sound effects with that name");
+      Debug.Log("Couldn't find sound effect: " + name);
+      return null;
     }
   }
 

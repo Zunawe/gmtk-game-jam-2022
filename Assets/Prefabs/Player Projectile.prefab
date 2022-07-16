@@ -139,3 +139,6 @@ MonoBehaviour:
   _targetTag: Enemy
   _moveSpeed: 12
   _damage: 1
+  _throwSoundName: 
+  _hitSoundName: cardhit
+  _travelSoundName: card throw
