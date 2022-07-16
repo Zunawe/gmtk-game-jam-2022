@@ -29,13 +29,6 @@ public class AudioManager : MonoBehaviour {
     }
   }
 
-  void Start () {
-  }
-
-  void Update () {
-    
-  }
-
   void OnDestroy () {
     if (Instance == this) {
       Instance = null;

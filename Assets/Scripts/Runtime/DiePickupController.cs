@@ -7,7 +7,6 @@ public class DiePickupController : MonoBehaviour {
 
   private void OnTriggerEnter2D (Collider2D other) {
     if (other.tag == "Player") {
-      Debug.Log(PlayerController.Instance == null);
       PlayerController.Instance.AddDie(Value);
 
       Destroy(gameObject);

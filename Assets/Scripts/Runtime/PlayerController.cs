@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -109,6 +110,17 @@ public class PlayerController : MonoBehaviour {
   public void AddDie (int value) {
     Debug.Log("Picked up die (" + value + ")");
     ++_dice[value - 1];
+  }
+
+  public void RemoveDie (int value) {
+    Debug.Log("Removed die (" + value + ")");
+    --_dice[value - 1];
+  }
+
+  public int[] GetDice () {
+    int[] diceCopy = new int[_dice.Length];
+    Array.Copy(_dice, diceCopy, _dice.Length);
+    return diceCopy;
   }
 
   public void Damage (int damage) {

@@ -22,11 +22,13 @@ public class EnemyController : MonoBehaviour {
   }
 
   public void Damage (int damage) {
-    _health -= damage;
+    if (_health > 0) {
+      _health -= damage;
 
-    if (_health <= 0) {
-      _health = 0;
-      Die();
+      if (_health <= 0) {
+        _health = 0;
+        Die();
+      }
     }
   }
 
