@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour {
     _playerPositionOffset = (Vector3)(Random.insideUnitCircle);
     _playerPositionOffset *= 5.0f;
 
-    _fireProjectileTimer =_fireProjectileCooldown;
+    _fireProjectileTimer = Random.Range(_fireProjectileCooldown, _fireProjectileCooldown * 2);
   }
 
   void Update () {

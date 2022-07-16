@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _diePickupPrefab: {fileID: 7593414682216054468, guid: b2696366dc86b034ba19935ddb9235ea, type: 3}
-  _health: 1
+  _health: 3
   _contactDamage: 1
   _projectilePrefab: {fileID: 3927266431504440966, guid: d1ef2afe9a9ae86418dbabaf002528c1, type: 3}
   _fireProjectileCooldown: 2
