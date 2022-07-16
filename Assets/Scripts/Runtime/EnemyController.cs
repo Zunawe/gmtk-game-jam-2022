@@ -15,7 +15,6 @@ public class EnemyController : MonoBehaviour {
   [SerializeField] private float _fireProjectileCooldown;
   private float _fireProjectileTimer;
 
-
   void Start () {
     _rigidbody = GetComponent<Rigidbody2D>();
   

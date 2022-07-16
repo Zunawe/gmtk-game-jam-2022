@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DieCostController : MonoBehaviour {
-  [SerializeField] private GameObject _dieCostDieIndicatorPrefab;
   [SerializeField] private Sprite[] _indicatorSprites;
 
   public void UpdateCost (int[] cost) {
@@ -16,7 +15,7 @@ public class DieCostController : MonoBehaviour {
       numDice += cost[i];
     }
     
-    float width = _indicatorSprites[0].bounds.size.x + 0.1f;
+    float width = (_indicatorSprites[0].bounds.size.x * 0.25f) + 0.1f;
 
     int k = 0;
     for (int i = 0; i < cost.Length; ++i) {
@@ -25,6 +24,7 @@ public class DieCostController : MonoBehaviour {
         GameObject indicator = new GameObject();
         indicator.transform.parent = transform;
         indicator.transform.localPosition = position;
+        indicator.transform.localScale = new Vector3(0.25f, 0.25f, 1.0f);
         SpriteRenderer spriteRenderer = indicator.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = _indicatorSprites[i];
         ++k;

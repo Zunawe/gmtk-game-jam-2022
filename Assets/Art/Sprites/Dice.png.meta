@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a0888f2a3a1e37340ac68c34eef1a8fd
+guid: 762a83a00d7f0184ab4c7a41fb6216f0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,70 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CasinoTiles_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9661473fbf0fd7340bab4d10a334bc56
-      internalID: 1627770516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CasinoTiles_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: daca23fd31766c847a4e1c547454227e
-      internalID: 1724420470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CasinoTiles_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4b2b3bb7f5ba7049a14eb63f43509e7
-      internalID: 561814529
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CasinoTiles_3
+      name: Dice_0
       rect:
         serializedVersion: 2
         x: 0
@@ -181,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d57b11bc8fd7574da83def5bfe9f2a1
-      internalID: -1920308832
+      spriteID: d9e41b4194b29c7408131f9a082a1253
+      internalID: 1298048944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CasinoTiles_4
+      name: Dice_1
       rect:
         serializedVersion: 2
         x: 64
@@ -202,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f92131ef686d7ed489f0983769793d9a
-      internalID: 87670115
+      spriteID: 78c0d3498e7cfc149bbb23734da38d18
+      internalID: 49535362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CasinoTiles_5
+      name: Dice_2
       rect:
         serializedVersion: 2
         x: 128
@@ -223,8 +160,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb6a693776c85e94e926966a11fb2383
-      internalID: 1248407299
+      spriteID: 9b6a1ab80a4b1484fa1d34270f0ca85b
+      internalID: 296990502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dice_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb89cedc5597e84988b1398a3f205d7
+      internalID: -1199826718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dice_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223f6240f29bb9d409a2b51b4118d93b
+      internalID: -1278286311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dice_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56af5b18e0f01b441acf94e5c3f4a585
+      internalID: -1508342810
       vertices: []
       indices: 
       edges: []
@@ -240,12 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CasinoTiles_2: 561814529
-      CasinoTiles_1: 1724420470
-      CasinoTiles_4: 87670115
-      CasinoTiles_5: 1248407299
-      CasinoTiles_3: -1920308832
-      CasinoTiles_0: 1627770516
+      Dice_1: 49535362
+      Dice_3: -1199826718
+      Dice_2: 296990502
+      Dice_0: 1298048944
+      Dice_4: -1278286311
+      Dice_5: -1508342810
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
