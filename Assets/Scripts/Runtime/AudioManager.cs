@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -7,6 +8,7 @@ using UnityEngine.InputSystem;
 #endif
 
 public class AudioManager : MonoBehaviour {
+  private Regex SFX_NAME_REGEX = new Regex(@"^([a-zA-Z ]+)\d*$");
   public static AudioManager Instance { get; private set; }
 
   [SerializeField] private GameObject _musicContainer;
@@ -18,20 +20,26 @@ public class AudioManager : MonoBehaviour {
 #endif
 
   private Dictionary<string, AudioSource> _music;
-  private Dictionary<string, AudioSource> _sfx;
+  private Dictionary<string, List<AudioSource>> _sfx;
 
   void Awake () {
     if (Instance == null) {
       Instance = this;
 
       _music = new Dictionary<string, AudioSource>();
-      _sfx = new Dictionary<string, AudioSource>();
+      _sfx = new Dictionary<string, List<AudioSource>>();
 
       foreach (AudioSource track in _musicContainer.transform.GetComponentsInChildren<AudioSource>()) {
         _music.Add(track.name, track);
       }
+
       foreach (AudioSource sound in _sfxContainer.transform.GetComponentsInChildren<AudioSource>()) {
-        _sfx.Add(sound.name, sound);
+        string folderName = SFX_NAME_REGEX.Match(sound.name).Groups[1].Value;
+
+        if (!_sfx.ContainsKey(folderName)) {
+          _sfx.Add(folderName, new List<AudioSource>());
+        }
+        _sfx[folderName].Add(sound);
       }
     } else {
       Destroy(gameObject);
@@ -65,13 +73,12 @@ public class AudioManager : MonoBehaviour {
   }
 
   public void PlaySfx (string name) {
-    _sfx[name].Play();
-  }
-
-  public void PlaySfxJittered (string name) {
-    _sfx[name].pitch = Random.Range(0.9f, 1.1f);
-    _sfx[name].Play();
-    _sfx[name].pitch = 1.0f;
+    if (_sfx.ContainsKey(name)) {
+      int i = Random.Range(0, _sfx[name].Count);
+      _sfx[name][i].Play();
+    } else {
+      Debug.Log("No sound effects with that name");
+    }
   }
 
 #if UNITY_EDITOR
