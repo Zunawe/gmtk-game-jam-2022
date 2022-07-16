@@ -20,6 +20,8 @@ public class ShopItemController : MonoBehaviour {
         foreach (int die in spentDice) {
           PlayerController.Instance.RemoveDie(die);
         }
+
+        AudioManager.Instance.PlaySfx("purchase");
         Destroy(gameObject);
       }
     }
