@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour {
   private Vector3 _dashStartPosition;
   private Vector3 _dashDestination;
   private bool _isDashing;
+  
+  [Header("Footstep SFX")]
+  [SerializeField] private float _footstepTime;
+  private float _footstepTimer;
 
   [Header("Shooting")]
   [SerializeField] private GameObject _reticle;
@@ -46,7 +50,14 @@ public class PlayerController : MonoBehaviour {
   }
 
   void Update () {
-    
+    if (_rigidbody.velocity.magnitude > 0.01f) {
+      _footstepTimer -= Time.deltaTime;
+
+      if (_footstepTimer < 0) {
+        AudioManager.Instance.PlaySfx("footstep");
+        _footstepTimer = _footstepTime;
+      }
+    }
   }
 
   void FixedUpdate () {
@@ -75,6 +86,7 @@ public class PlayerController : MonoBehaviour {
   public void OnDash (InputAction.CallbackContext context) {
     if (context.performed) {
       if (_dashTimer <= 0) {
+        AudioManager.Instance.PlaySfx("dash");
         _dashStartPosition = transform.position;
         _dashDestination = _dashStartPosition + ((new Vector3(_movement.x, _movement.y, 0)) * _dashDistance);
         _dashTimer = _dashTime;
@@ -103,6 +115,7 @@ public class PlayerController : MonoBehaviour {
   public void OnHeal (InputAction.CallbackContext context) {
     if (context.performed) {
       if (_dice[5] > 0) {
+        AudioManager.Instance.PlaySfx("heal");
         _dice[5] -= 1;
         _currentHealth += 1;
       }
@@ -131,6 +144,9 @@ public class PlayerController : MonoBehaviour {
     if (_currentHealth <= 0) {
       _currentHealth = 0;
       gameObject.SetActive(false);
+      AudioManager.Instance.PlaySfx("losing sound");
+    } else {
+      AudioManager.Instance.PlaySfx("hit");
     }
   }
 
