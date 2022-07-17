@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
-  public enum WeaponType {
-    STICK,
-    CARD
+  public enum WeaponType: int {
+    STICK = 0,
+    CARD = 1
   }
 
   public static PlayerController Instance { get; private set; }
