@@ -65,7 +65,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2325600501055275600}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.32
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -74,8 +74,8 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
+  m_Height: 0.82
+  m_BaseOffset: 0.49
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2325600501055275602
@@ -90,9 +90,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288bb78472fb2794fa293d47517ab51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsStrong: 0
   _diePickupPrefab: {fileID: 7593414682216054468, guid: b2696366dc86b034ba19935ddb9235ea, type: 3}
   _health: 3
   _contactDamage: 1
+  _spriteRenderer: {fileID: 2325600502529132891}
+  _strongSprite: {fileID: -971656857, guid: 6390379bb0b5ee04195159f767e5a4b2, type: 3}
   _projectilePrefab: {fileID: 3927266431504440966, guid: d1ef2afe9a9ae86418dbabaf002528c1, type: 3}
   _fireProjectileCooldown: 2
 --- !u!1 &2325600502529132888

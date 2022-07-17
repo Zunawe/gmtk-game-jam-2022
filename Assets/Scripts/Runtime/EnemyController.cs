@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour {
+  public bool IsStrong = false;
   [SerializeField] private DiePickupController _diePickupPrefab;
   [SerializeField] private int _health;
   [SerializeField] private int _contactDamage;
@@ -11,11 +12,14 @@ public class EnemyController : MonoBehaviour {
   private NavMeshAgent _agent;
   private Vector3 _playerPositionOffset;
 
+  [SerializeField] private SpriteRenderer _spriteRenderer;
+  [SerializeField] private Sprite _strongSprite;
   [SerializeField] private ProjectileController _projectilePrefab;
   [SerializeField] private float _fireProjectileCooldown;
   private float _fireProjectileTimer;
 
   void Start () {
+    IsStrong = Random.value < 1.0f;
     _rigidbody = GetComponent<Rigidbody2D>();
   
     _agent = GetComponent<NavMeshAgent>();
