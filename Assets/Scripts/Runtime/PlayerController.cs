@@ -5,6 +5,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
+  public enum WeaponType {
+    STICK,
+    CARD
+  }
+
   public static PlayerController Instance { get; private set; }
 
   [Header("Health")]
@@ -48,6 +53,7 @@ public class PlayerController : MonoBehaviour {
   private bool _isFacingUp;
 
   private int[] _dice = new int[6];
+  public WeaponType _currentWeapon = WeaponType.CARD;
 
   void Awake () {
     if (Instance == null) {
@@ -129,8 +135,15 @@ public class PlayerController : MonoBehaviour {
 
   public void OnShoot (InputAction.CallbackContext context) {
     if (context.performed && Time.timeScale != 0) {
-      ProjectileController projectile = Instantiate(_projectilePrefab, _reticle.transform.position, Quaternion.identity);
-      projectile.Direction = _reticle.transform.localPosition;
+      switch(_currentWeapon) {
+        case WeaponType.CARD:
+          ProjectileController projectile = Instantiate(_projectilePrefab, _reticle.transform.position, Quaternion.identity);
+          projectile.Direction = _reticle.transform.localPosition;
+          break;
+        case WeaponType.STICK:
+          //
+          break;
+      }
     }
   }
 
