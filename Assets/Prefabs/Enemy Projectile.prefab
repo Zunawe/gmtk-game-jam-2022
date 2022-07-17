@@ -136,9 +136,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb02ca9ba319cc499e729158c9bcb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spritePool:
+  - {fileID: 21300000, guid: 2e0de5327e1fb8c4d8362ec6bebfcfdb, type: 3}
   _targetTag: Player
   _moveSpeed: 6
   _damage: 1
+  _spin: 1
   _throwSoundName: 
   _hitSoundName: 
   _travelSoundName: 
