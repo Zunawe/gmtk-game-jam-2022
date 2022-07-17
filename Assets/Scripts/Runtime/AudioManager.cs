@@ -25,6 +25,7 @@ public class AudioManager : MonoBehaviour {
 
   void Awake () {
     if (Instance == null) {
+      DontDestroyOnLoad(gameObject);
       Instance = this;
 
       _music = new Dictionary<string, AudioSource>();

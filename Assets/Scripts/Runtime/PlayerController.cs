@@ -195,8 +195,9 @@ public class PlayerController : MonoBehaviour {
 
       if (_currentHealth <= 0) {
         _currentHealth = 0;
-        gameObject.SetActive(false);
         AudioManager.Instance.PlaySfx("losing sound");
+        GameOverUiController.Instance.GameOver();
+        gameObject.SetActive(false);
       } else {
         AudioManager.Instance.PlaySfx("hit");
       }
