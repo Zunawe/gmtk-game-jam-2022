@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc7f74969b7e7224b961ae112a1b08f5
+guid: 61ec2d7128c58ba47b43e9465e46e9bf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,6 +100,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -108,7 +120,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -118,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8088ef613f1f3343a7225e07e0be8fc
-      internalID: -1784592328
+      spriteID: 6c42860d16226584f88483b085290184
+      internalID: 1358272996
       vertices: []
       indices: 
       edges: []
@@ -129,7 +141,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 384
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -139,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 619872689875ea7479bf9ab8f8dfaf4c
-      internalID: 1625177347
+      spriteID: 561aeb1a766d7aa4b8c4e45ede71c712
+      internalID: 2008991660
       vertices: []
       indices: 
       edges: []
@@ -150,7 +162,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 384
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -160,8 +172,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d18d695782e6d74c8274bdd63c7a4a9
-      internalID: -289071163
+      spriteID: d066c5f59a723f84bb95a3c023977bd7
+      internalID: 2064644173
       vertices: []
       indices: 
       edges: []
@@ -171,7 +183,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 384
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -181,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2262e509ab99cc3469ce2865d5068a19
-      internalID: -726777917
+      spriteID: 22226cfd553fdad4ebe72ff93b95ef36
+      internalID: -1617304502
       vertices: []
       indices: 
       edges: []
@@ -192,7 +204,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 384
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -202,8 +214,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c2a9923942e1914780f4709f2f69c72
-      internalID: -1013320243
+      spriteID: 4c9076a5919190d4da58e817217ef587
+      internalID: -112195642
       vertices: []
       indices: 
       edges: []
@@ -213,7 +225,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -223,8 +235,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0b5086907c449545b40f78c545acd0a
-      internalID: -384248373
+      spriteID: c40c3b7139dc9f8419223c532d8ade62
+      internalID: -1578032328
       vertices: []
       indices: 
       edges: []
@@ -234,7 +246,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 320
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -244,8 +256,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4162fb364668b34086ef319169f4562
-      internalID: 308003525
+      spriteID: 433e9e114db5f8c4297b47e964cd46f4
+      internalID: 1956890364
       vertices: []
       indices: 
       edges: []
@@ -255,7 +267,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 320
+        y: 256
         width: 64
         height: 64
       alignment: 0
@@ -265,8 +277,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 697a788cfa4f77a4a952f8216fa731e5
-      internalID: -1316901811
+      spriteID: ff9d254f318619541a8bdc32e7454a04
+      internalID: 1123105971
       vertices: []
       indices: 
       edges: []
@@ -275,7 +287,7 @@ TextureImporter:
       name: CasinoTiles_8
       rect:
         serializedVersion: 2
-        x: 0
+        x: 256
         y: 256
         width: 64
         height: 64
@@ -286,8 +298,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6909af2f260fb0f428bdf6861ebf96f3
-      internalID: 709169687
+      spriteID: 0d4ce4028353177469671254aa930c2e
+      internalID: 1148247596
       vertices: []
       indices: 
       edges: []
@@ -296,7 +308,7 @@ TextureImporter:
       name: CasinoTiles_9
       rect:
         serializedVersion: 2
-        x: 64
+        x: 320
         y: 256
         width: 64
         height: 64
@@ -307,8 +319,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbb9a335203b70f408a3867311df7322
-      internalID: -2038506449
+      spriteID: 84cc01c699aaa54469abc222b5ab4a8b
+      internalID: -815856204
       vertices: []
       indices: 
       edges: []
@@ -317,8 +329,8 @@ TextureImporter:
       name: CasinoTiles_10
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
+        x: 0
+        y: 192
         width: 64
         height: 64
       alignment: 0
@@ -328,8 +340,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d70a40c429c13f34f9e1e2a11afe456c
-      internalID: -437414351
+      spriteID: 17ad5e42756d41b49a76f1a1294d5326
+      internalID: 1204459101
       vertices: []
       indices: 
       edges: []
@@ -338,7 +350,7 @@ TextureImporter:
       name: CasinoTiles_11
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 192
         width: 64
         height: 64
@@ -349,8 +361,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c76d99e0649d744d9a41ca4c7f09455
-      internalID: 452042867
+      spriteID: 663f9316aa08fd945925b0539ba0ab58
+      internalID: 1580653716
       vertices: []
       indices: 
       edges: []
@@ -359,7 +371,7 @@ TextureImporter:
       name: CasinoTiles_12
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 192
         width: 64
         height: 64
@@ -370,8 +382,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89b0438b5da47f54f9791bb100ab8283
-      internalID: -117431138
+      spriteID: 068c3b78218af6a458027110d064e5cd
+      internalID: -358013426
       vertices: []
       indices: 
       edges: []
@@ -380,7 +392,7 @@ TextureImporter:
       name: CasinoTiles_13
       rect:
         serializedVersion: 2
-        x: 128
+        x: 256
         y: 192
         width: 64
         height: 64
@@ -391,8 +403,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73d43cf75f121a94aac7155ca01b6eaf
-      internalID: -1311366506
+      spriteID: e53e84a96de218844b9738bfa8504116
+      internalID: 1156676510
       vertices: []
       indices: 
       edges: []
@@ -401,7 +413,7 @@ TextureImporter:
       name: CasinoTiles_14
       rect:
         serializedVersion: 2
-        x: 192
+        x: 320
         y: 192
         width: 64
         height: 64
@@ -412,8 +424,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9571c8c731f31034cbb3fccb429b8fc9
-      internalID: -392808674
+      spriteID: 71054cd5afef6fc4e97d1386b66d6b92
+      internalID: -669165620
       vertices: []
       indices: 
       edges: []
@@ -422,8 +434,8 @@ TextureImporter:
       name: CasinoTiles_15
       rect:
         serializedVersion: 2
-        x: 256
-        y: 192
+        x: 0
+        y: 128
         width: 64
         height: 64
       alignment: 0
@@ -433,8 +445,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 355e74aad159ce54ca7b3e277386c732
-      internalID: -270538367
+      spriteID: a0fb5036accd786418638436661b9e45
+      internalID: -2128177165
       vertices: []
       indices: 
       edges: []
@@ -443,7 +455,7 @@ TextureImporter:
       name: CasinoTiles_16
       rect:
         serializedVersion: 2
-        x: 0
+        x: 128
         y: 128
         width: 64
         height: 64
@@ -454,8 +466,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e8671c63189ab74998befefdf006bec
-      internalID: -1535379533
+      spriteID: 5543b93ff76f65547a531ad5f5e9a107
+      internalID: -918528926
       vertices: []
       indices: 
       edges: []
@@ -464,48 +476,6 @@ TextureImporter:
       name: CasinoTiles_17
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 024976779280fc24eae98cfb14ea340f
-      internalID: -1871706914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CasinoTiles_18
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd103a51dfc45ef4c93782b314b0dccb
-      internalID: 1016608111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CasinoTiles_19
-      rect:
-        serializedVersion: 2
         x: 192
         y: 128
         width: 64
@@ -517,14 +487,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2061e7cec9ce94f4caf2f0bba91654ee
-      internalID: -421813408
+      spriteID: 8d0fd94c4d1e5b846b0430c3a6cf1c95
+      internalID: -725025432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CasinoTiles_20
+      name: CasinoTiles_18
       rect:
         serializedVersion: 2
         x: 256
@@ -538,14 +508,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e469daeef8df9e047b09fea764e68bfc
-      internalID: 10478508
+      spriteID: 101362f2ea0407b46b51e922fb4bc058
+      internalID: 448175618
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CasinoTiles_21
+      name: CasinoTiles_19
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777f2465371cde34abf5f236d967f61b
+      internalID: 451134247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CasinoTiles_20
       rect:
         serializedVersion: 2
         x: 0
@@ -559,35 +550,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cabbe0efda35ea04ab942c13397fe734
-      internalID: 1834381480
+      spriteID: 166b15def45295a449cc12c08358009a
+      internalID: -637508242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CasinoTiles_22
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f88a102b68bf92743a43acd3b334323c
-      internalID: -5062911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CasinoTiles_23
+      name: CasinoTiles_21
       rect:
         serializedVersion: 2
         x: 128
@@ -601,14 +571,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbc27475be20fc046ab98086d2c6ee63
-      internalID: 1046569681
+      spriteID: 05c3a397145a87d478fe0ed161eecedf
+      internalID: -139472060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CasinoTiles_24
+      name: CasinoTiles_22
       rect:
         serializedVersion: 2
         x: 192
@@ -622,14 +592,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b886fb2949007714c85a078eec850a29
-      internalID: -1449157255
+      spriteID: cca4c87c4fc80c241a5692c8e864a6c2
+      internalID: -211277797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CasinoTiles_25
+      name: CasinoTiles_23
       rect:
         serializedVersion: 2
         x: 256
@@ -643,8 +613,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 898c762215eda2d4fb007440c8dfed4c
-      internalID: -437360274
+      spriteID: ac23aa63c770f02428f2efe646a5a541
+      internalID: 295888688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CasinoTiles_24
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6645110eca1c0a4cbb6eb6296afbaf5
+      internalID: -2048696908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CasinoTiles_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad190a01aca373b46a80d3e90ab54e9d
+      internalID: -1365989530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CasinoTiles_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c69a869cd4a9c14ead2e1edaaa526d9
+      internalID: -1712668901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CasinoTiles_27
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a92f75210fca2d46bb21e69cee1d6b5
+      internalID: -710367235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CasinoTiles_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4a72ed51d190e4c86213508c915615
+      internalID: -1882001490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CasinoTiles_29
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3bf7beb105b35469c6feedcd65cc3b
+      internalID: 635452878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CasinoTiles_30
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21fe480bcfc090b4a87c43cb409dc441
+      internalID: -375878272
       vertices: []
       indices: 
       edges: []
@@ -660,32 +777,37 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CasinoTiles_19: -421813408
-      CasinoTiles_2: -289071163
-      CasinoTiles_1: 1625177347
-      CasinoTiles_7: -1316901811
-      CasinoTiles_4: -1013320243
-      CasinoTiles_21: 1834381480
-      CasinoTiles_5: -384248373
-      CasinoTiles_17: -1871706914
-      CasinoTiles_14: -392808674
-      CasinoTiles_3: -726777917
-      CasinoTiles_11: 452042867
-      CasinoTiles_18: 1016608111
-      CasinoTiles_22: -5062911
-      CasinoTiles_15: -270538367
-      CasinoTiles_6: 308003525
-      CasinoTiles_8: 709169687
-      CasinoTiles_25: -437360274
-      CasinoTiles_16: -1535379533
-      CasinoTiles_23: 1046569681
-      CasinoTiles_24: -1449157255
-      CasinoTiles_10: -437414351
-      CasinoTiles_13: -1311366506
-      CasinoTiles_20: 10478508
-      CasinoTiles_12: -117431138
-      CasinoTiles_0: -1784592328
-      CasinoTiles_9: -2038506449
+      CasinoTiles_19: 451134247
+      CasinoTiles_2: 2064644173
+      CasinoTiles_1: 2008991660
+      CasinoTiles_7: 1123105971
+      CasinoTiles_4: -112195642
+      CasinoTiles_21: -139472060
+      CasinoTiles_5: -1578032328
+      CasinoTiles_17: -725025432
+      CasinoTiles_30: -375878272
+      CasinoTiles_14: -669165620
+      CasinoTiles_3: -1617304502
+      CasinoTiles_11: 1580653716
+      CasinoTiles_18: 448175618
+      CasinoTiles_22: -211277797
+      CasinoTiles_15: -2128177165
+      CasinoTiles_6: 1956890364
+      CasinoTiles_8: 1148247596
+      CasinoTiles_25: -1365989530
+      CasinoTiles_16: -918528926
+      CasinoTiles_23: 295888688
+      CasinoTiles_27: -710367235
+      CasinoTiles_24: -2048696908
+      CasinoTiles_29: 635452878
+      CasinoTiles_10: 1204459101
+      CasinoTiles_13: 1156676510
+      CasinoTiles_28: -1882001490
+      CasinoTiles_20: -637508242
+      CasinoTiles_12: -358013426
+      CasinoTiles_0: 1358272996
+      CasinoTiles_9: -815856204
+      CasinoTiles_26: -1712668901
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

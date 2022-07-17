@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: CasinoTiles_15
+  m_Name: CasinoTiles_29
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -2128177165, guid: 61ec2d7128c58ba47b43e9465e46e9bf, type: 3}
+  m_Sprite: {fileID: 635452878, guid: 61ec2d7128c58ba47b43e9465e46e9bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

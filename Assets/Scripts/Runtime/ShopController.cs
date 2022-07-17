@@ -33,7 +33,7 @@ public class ShopController : MonoBehaviour {
       }
 
       _items[i] = Instantiate(_shopItemControllerPrefab, transform);
-      _items[i].transform.localPosition = new Vector3((i * 2.0f) - (_items.Length * 2.0f / 2.0f), 0, 0);
+      _items[i].transform.localPosition = new Vector3((i * 2.0f) - ((_items.Length - 1) * 2.0f / 2.0f), -1.75f, 0);
     }
   }
 }
