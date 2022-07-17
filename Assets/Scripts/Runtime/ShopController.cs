@@ -23,7 +23,16 @@ public class ShopController : MonoBehaviour {
   }
 
   void Update () {
-    
+    bool isOutOfStock = true;
+    for (int i = 0; i < _items.Length; ++i) {
+      if (_items[i] != null) {
+        isOutOfStock = false;
+      }
+    }
+
+    if (isOutOfStock) {
+      RefreshShop();
+    }
   }
 
   public void RefreshShop () {
