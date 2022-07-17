@@ -51,6 +51,24 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Shield",
+                    "type": "Button",
+                    "id": "17af2626-2def-416f-8a30-92afc37e8f57",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Buff",
+                    "type": "Button",
+                    "id": "00d444e0-6db8-4bdf-a30a-f042c112da1a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "RefreshShop",
                     "type": "Button",
                     "id": "b87e257c-36e4-4804-837b-7c5c97ec4cf8",
@@ -201,6 +219,28 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "635f7226-8ac8-4eff-a8d9-d6e6da5990a5",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Shield",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1de991d0-01a7-402d-a587-ff861e139761",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Buff",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
