@@ -85,9 +85,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     _animator.SetFloat("VelocityX", _rigidbody.velocity.x);
-    _animator.SetBool("IsFacingUp", _isFacingUp);
     _animator.SetFloat("SpeedX", Mathf.Abs(_rigidbody.velocity.x));
     _animator.SetFloat("Speed", _rigidbody.velocity.magnitude);
+    _animator.SetBool("IsFacingUp", _isFacingUp);
   }
 
   void FixedUpdate () {
@@ -105,31 +105,39 @@ public class PlayerController : MonoBehaviour {
     }
   }
 
+  public void OnPause (InputAction.CallbackContext context) {
+    if (context.performed) {
+      PauseUiController.Instance.Pause();
+    }
+  }
+
   public void OnMove (InputAction.CallbackContext context) {
     _movement = context.ReadValue<Vector2>();
     _movement.Normalize();
   }
 
   public void OnShoot (InputAction.CallbackContext context) {
-    if (context.performed) {
+    if (context.performed && Time.timeScale != 0) {
       ProjectileController projectile = Instantiate(_projectilePrefab, _reticle.transform.position, Quaternion.identity);
       projectile.Direction = _reticle.transform.localPosition;
     }
   }
 
   public void OnAim (InputAction.CallbackContext context) {
-    Vector2 input = context.ReadValue<Vector2>();
-    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(input);
-    mousePosition.z = 0;
+    if (Time.timeScale != 0) {
+      Vector2 input = context.ReadValue<Vector2>();
+      Vector3 mousePosition = Camera.main.ScreenToWorldPoint(input);
+      mousePosition.z = 0;
 
-    Vector3 direction = mousePosition - transform.position;
-    direction.Normalize();
+      Vector3 direction = mousePosition - transform.position;
+      direction.Normalize();
 
-    _reticle.transform.localPosition = direction;
+      _reticle.transform.localPosition = direction;
+    }
   }
 
   public void OnDash (InputAction.CallbackContext context) {
-    if (context.performed) {
+    if (context.performed && Time.timeScale != 0) {
       if (_dice[0] >= 1 && _dashTimer <= 0) {
         AudioManager.Instance.PlaySfx("dash");
         _dashStartPosition = transform.position;
@@ -141,7 +149,7 @@ public class PlayerController : MonoBehaviour {
   }
 
   public void OnRefreshShop (InputAction.CallbackContext context) {
-    if (context.performed) {
+    if (context.performed && Time.timeScale != 0) {
       if (_dice[3] >= 4) {
         AudioManager.Instance.PlaySfx("shop reroll");
         ShopController.Instance.RefreshShop();
@@ -151,7 +159,7 @@ public class PlayerController : MonoBehaviour {
   }
 
   public void OnHeal (InputAction.CallbackContext context) {
-    if (context.performed) {
+    if (context.performed && Time.timeScale != 0) {
       if (_dice[5] >= 6) {
         AudioManager.Instance.PlaySfx("heal");
         Heal(1);
@@ -161,7 +169,6 @@ public class PlayerController : MonoBehaviour {
   }
 
   public void AddDie (int value, int quantity = 1) {
-    Debug.Log("Picked up die (" + value + ")");
     if (_dice[value - 1] < Mathf.Ceil((float)value / 2.0f) * 2) {
       _dice[value - 1] += quantity;
       InventoryUiController.Instance.UpdateInventory(_dice);
@@ -169,7 +176,6 @@ public class PlayerController : MonoBehaviour {
   }
 
   public void RemoveDie (int value, int quantity = 1) {
-    Debug.Log("Removed die (" + value + ")");
     _dice[value - 1] -= quantity;
     InventoryUiController.Instance.UpdateInventory(_dice);
   }
