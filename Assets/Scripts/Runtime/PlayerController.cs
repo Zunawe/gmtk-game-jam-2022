@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour {
   private Vector3 _dashStartPosition;
   private Vector3 _dashDestination;
   private bool _isDashing;
+
+  [Header("Shield")]
+  [SerializeField] private GameObject _shield;
   
   [Header("Footstep SFX")]
   [SerializeField] private float _footstepTime;
@@ -148,6 +151,16 @@ public class PlayerController : MonoBehaviour {
     }
   }
 
+  public void OnShield (InputAction.CallbackContext context) {
+    if (context.performed && Time.timeScale != 0) {
+      if (_dice[2] >= 3) {
+        _shield.SetActive(true);
+        AudioManager.Instance.PlaySfx("shield up");
+        RemoveDie(3, 3);
+      }
+    }
+  }
+
   public void OnRefreshShop (InputAction.CallbackContext context) {
     if (context.performed && Time.timeScale != 0) {
       if (_dice[3] >= 4) {
@@ -188,6 +201,11 @@ public class PlayerController : MonoBehaviour {
 
   public void Damage (int damage) {
     if (_invincibilityTimer <= 0) {
+      if (_shield.activeSelf) {
+        AudioManager.Instance.PlaySfx("shield down");
+        _shield.SetActive(false);
+        return;
+      }
       _currentHealth -= damage;
       HealthUiController.Instance.UpdateHealth(_currentHealth);
 
