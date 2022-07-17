@@ -8,7 +8,7 @@ public class ShopItemController : MonoBehaviour {
   [SerializeField] private DieCostController _dieCostController;
 
   void Start () {
-    _dieCostController.UpdateCost(_cost);
+    Generate();
   }
 
   private void OnTriggerEnter2D (Collider2D other) {
@@ -52,5 +52,17 @@ public class ShopItemController : MonoBehaviour {
       return null;
     }
     return foundDice;
+  }
+
+  public void Generate () {
+    for (int i = 0; i < _cost.Length; ++i) {
+      _cost[i] = 0;
+    }
+
+    ++_cost[Random.Range(0, 6)];
+    ++_cost[Random.Range(0, 6)];
+    ++_cost[Random.Range(0, 6)];
+
+    _dieCostController.UpdateCost(_cost);
   }
 }

@@ -110,18 +110,6 @@ public class PlayerController : MonoBehaviour {
     _movement.Normalize();
   }
 
-  public void OnDash (InputAction.CallbackContext context) {
-    if (context.performed) {
-      if (_dice[0] >= 1 && _dashTimer <= 0) {
-        AudioManager.Instance.PlaySfx("dash");
-        _dashStartPosition = transform.position;
-        _dashDestination = _dashStartPosition + ((new Vector3(_movement.x, _movement.y, 0)) * _dashDistance);
-        _dashTimer = _dashTime;
-        RemoveDie(1);
-      }
-    }
-  }
-
   public void OnShoot (InputAction.CallbackContext context) {
     if (context.performed) {
       ProjectileController projectile = Instantiate(_projectilePrefab, _reticle.transform.position, Quaternion.identity);
@@ -140,6 +128,28 @@ public class PlayerController : MonoBehaviour {
     _reticle.transform.localPosition = direction;
   }
 
+  public void OnDash (InputAction.CallbackContext context) {
+    if (context.performed) {
+      if (_dice[0] >= 1 && _dashTimer <= 0) {
+        AudioManager.Instance.PlaySfx("dash");
+        _dashStartPosition = transform.position;
+        _dashDestination = _dashStartPosition + ((new Vector3(_movement.x, _movement.y, 0)) * _dashDistance);
+        _dashTimer = _dashTime;
+        RemoveDie(1);
+      }
+    }
+  }
+
+  public void OnRefreshShop (InputAction.CallbackContext context) {
+    if (context.performed) {
+      if (_dice[3] >= 4) {
+        AudioManager.Instance.PlaySfx("shop reroll");
+        ShopController.Instance.RefreshShop();
+        RemoveDie(4, 4);
+      }
+    }
+  }
+
   public void OnHeal (InputAction.CallbackContext context) {
     if (context.performed) {
       if (_dice[5] >= 6) {
@@ -154,14 +164,14 @@ public class PlayerController : MonoBehaviour {
     Debug.Log("Picked up die (" + value + ")");
     if (_dice[value - 1] < Mathf.Ceil((float)value / 2.0f) * 2) {
       _dice[value - 1] += quantity;
-      InventoryUiManager.Instance.UpdateInventory(_dice);
+      InventoryUiController.Instance.UpdateInventory(_dice);
     }
   }
 
   public void RemoveDie (int value, int quantity = 1) {
     Debug.Log("Removed die (" + value + ")");
     _dice[value - 1] -= quantity;
-    InventoryUiManager.Instance.UpdateInventory(_dice);
+    InventoryUiController.Instance.UpdateInventory(_dice);
   }
 
   public int[] GetDice () {

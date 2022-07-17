@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryUiManager : MonoBehaviour {
-  public static InventoryUiManager Instance { get; private set; }
+public class InventoryUiController : MonoBehaviour {
+  public static InventoryUiController Instance { get; private set; }
 
   [SerializeField] private Image _inventoryDieImagePrefab;
   [SerializeField] private Sprite[] _dieSprites = new Sprite[6];
