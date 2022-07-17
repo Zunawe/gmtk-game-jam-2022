@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3758186715779192537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 811465282, guid: c16d3e728d3f6594fa8ecae4de74dd28, type: 3}
+  m_Sprite: {fileID: -84778728, guid: 04dca65687217cf4e8e33cbd99ecbbc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136,9 +136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb02ca9ba319cc499e729158c9bcb72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spritePool:
+  - {fileID: -550847522, guid: 04dca65687217cf4e8e33cbd99ecbbc8, type: 3}
+  - {fileID: 1860641807, guid: 04dca65687217cf4e8e33cbd99ecbbc8, type: 3}
+  - {fileID: -84778728, guid: 04dca65687217cf4e8e33cbd99ecbbc8, type: 3}
   _targetTag: Enemy
   _moveSpeed: 12
   _damage: 1
+  _spin: 1
   _throwSoundName: 
   _hitSoundName: cardhit
   _travelSoundName: card throw
