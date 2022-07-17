@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour {
       _dashTimer -= Time.fixedDeltaTime;
       _rigidbody.MovePosition(Vector3.Lerp(_dashStartPosition, _dashDestination, 1.0f - (_dashTimer / _dashTime)));
     } else {
-      _rigidbody.velocity = _movement * (_buffTimer > 0 ? _moveSpeed * 1.5 : _moveSpeed);
+      _rigidbody.velocity = _movement * (_buffTimer > 0 ? _moveSpeed * 1.5f : _moveSpeed);
     }
   }
 
