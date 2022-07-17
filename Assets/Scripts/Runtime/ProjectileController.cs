@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour {
+  [SerializeField] private Sprite[] _spritePool;
   [SerializeField] private string _targetTag;
   [SerializeField] private float _moveSpeed;
   [SerializeField] private int _damage;
+  [SerializeField] private bool _spin;
 
   [SerializeField] private string _throwSoundName;
   [SerializeField] private string _hitSoundName;
@@ -25,12 +27,19 @@ public class ProjectileController : MonoBehaviour {
 
   void Start () {
     _rigidbody = GetComponent<Rigidbody2D>();
+    GetComponent<SpriteRenderer>().sprite = _spritePool[Random.Range(0, _spritePool.Length)];
     AudioManager.Instance.PlaySfx(_throwSoundName);
     _travelSound = AudioManager.Instance.PlaySfxLooping(_travelSoundName);
 
     if (_travelSound != null) {
       _travelSound.transform.parent = transform;
       _travelSound.transform.localPosition = Vector3.zero;
+    }
+  }
+
+  void Update () {
+    if (_spin) {
+      transform.Rotate(new Vector3(0, 0, 600 * Time.deltaTime));
     }
   }
 
