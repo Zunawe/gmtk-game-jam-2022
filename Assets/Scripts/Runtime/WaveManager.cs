@@ -34,6 +34,8 @@ public class WaveManager : MonoBehaviour {
     foreach (Transform child in _spawnPointContainer.transform) {
       _spawnPoints.Add(child.position);
     }
+
+    AudioManager.Instance.PlayMusic("Gambling for your heart");
   }
 
   void Update () {
