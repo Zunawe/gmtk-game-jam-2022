@@ -23,7 +23,16 @@ public class ShopController : MonoBehaviour {
   }
 
   void Update () {
-    
+    bool isOutOfStock = true;
+    for (int i = 0; i < _items.Length; ++i) {
+      if (_items[i] != null) {
+        isOutOfStock = false;
+      }
+    }
+
+    if (isOutOfStock) {
+      RefreshShop();
+    }
   }
 
   public void RefreshShop () {
@@ -33,7 +42,7 @@ public class ShopController : MonoBehaviour {
       }
 
       _items[i] = Instantiate(_shopItemControllerPrefab, transform);
-      _items[i].transform.localPosition = new Vector3((i * 2.0f) - ((_items.Length - 1) * 2.0f / 2.0f), -1.75f, 0);
+      _items[i].transform.localPosition = new Vector3((i * 2.0f) - ((_items.Length - 1) * 2.0f / 2.0f), -3f, 0);
     }
   }
 }

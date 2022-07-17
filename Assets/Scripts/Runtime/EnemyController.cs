@@ -28,6 +28,10 @@ public class EnemyController : MonoBehaviour {
     _fireProjectileTimer = Random.Range(_fireProjectileCooldown, _fireProjectileCooldown * 2);
   }
 
+  void FixedUpdate () {
+    _rigidbody.velocity *= 0.99999f;
+  }
+
   void Update () {
     Vector3 drift = (Vector3)(Random.insideUnitCircle) * 0.0001f;
     _agent.destination = PlayerController.Instance.transform.position + _playerPositionOffset + drift;

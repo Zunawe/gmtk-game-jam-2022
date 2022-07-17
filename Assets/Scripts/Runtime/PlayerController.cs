@@ -5,6 +5,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour {
+  public enum WeaponType: int {
+    STICK = 0,
+    CARD = 1
+  }
+
   public static PlayerController Instance { get; private set; }
 
   [Header("Health")]
@@ -42,12 +47,16 @@ public class PlayerController : MonoBehaviour {
   [SerializeField] private GameObject _reticle;
   [SerializeField] private ProjectileController _projectilePrefab;
 
+  [Header("Melee")]
+  [SerializeField] private MeleeSwingController _meleeSwingPrefab;
+
   private Rigidbody2D _rigidbody;
   private Animator _animator;
   [SerializeField] private SpriteRenderer _spriteRenderer;
   private bool _isFacingUp;
 
   private int[] _dice = new int[6];
+  public WeaponType _currentWeapon = WeaponType.STICK;
 
   void Awake () {
     if (Instance == null) {
@@ -129,8 +138,16 @@ public class PlayerController : MonoBehaviour {
 
   public void OnShoot (InputAction.CallbackContext context) {
     if (context.performed && Time.timeScale != 0) {
-      ProjectileController projectile = Instantiate(_projectilePrefab, _reticle.transform.position, Quaternion.identity);
-      projectile.Direction = _reticle.transform.localPosition;
+      switch(_currentWeapon) {
+        case WeaponType.CARD:
+          ProjectileController projectile = Instantiate(_projectilePrefab, _reticle.transform.position, Quaternion.identity);
+          projectile.Direction = _reticle.transform.localPosition;
+          break;
+        case WeaponType.STICK:
+          AudioManager.Instance.PlaySfx("dartthrow");
+          Instantiate(_meleeSwingPrefab, _reticle.transform.position, Quaternion.identity);
+          break;
+      }
     }
   }
 

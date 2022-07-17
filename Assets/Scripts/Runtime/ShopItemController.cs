@@ -5,6 +5,16 @@ using UnityEngine;
 public class ShopItemController : MonoBehaviour {
   public int[] _cost = new int[6];
 
+  [SerializeField] private SpriteRenderer _spriteRenderer;
+  
+  PlayerController.WeaponType[] possibleTypes = new[] {
+    PlayerController.WeaponType.STICK,
+    PlayerController.WeaponType.CARD
+  };
+  
+  public Sprite[] Sprites = new Sprite[2];
+  public PlayerController.WeaponType _weaponType = PlayerController.WeaponType.STICK;
+
   [SerializeField] private DieCostController _dieCostController;
 
   void Start () {
@@ -20,6 +30,7 @@ public class ShopItemController : MonoBehaviour {
         foreach (int die in spentDice) {
           PlayerController.Instance.RemoveDie(die);
         }
+        PlayerController.Instance._currentWeapon = _weaponType;
 
         AudioManager.Instance.PlaySfx("purchase");
         Destroy(gameObject);
@@ -55,6 +66,9 @@ public class ShopItemController : MonoBehaviour {
   }
 
   public void Generate () {
+    _weaponType = possibleTypes[Random.Range(0, possibleTypes.Length)];
+    _spriteRenderer.sprite = Sprites[(int)_weaponType];
+
     for (int i = 0; i < _cost.Length; ++i) {
       _cost[i] = 0;
     }
