@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour {
   [Header("Health")]
   [SerializeField] private int _maxHealth;
   [SerializeField] private int _currentHealth;
+  [SerializeField] private float _invincibilityTime;
+  private float _invincibilityTimer;
+  [SerializeField] private float _invincibilityFlashCycleTime;
+  private float _invincibilityFlashCycleTimer;
 
   [Header("Movement")]
   [SerializeField] private float _moveSpeed;
@@ -33,6 +37,7 @@ public class PlayerController : MonoBehaviour {
 
   private Rigidbody2D _rigidbody;
   private Animator _animator;
+  [SerializeField] private SpriteRenderer _spriteRenderer;
   private bool _isFacingUp;
 
   private int[] _dice = new int[6];
@@ -48,10 +53,22 @@ public class PlayerController : MonoBehaviour {
   void Start () {
     _rigidbody = GetComponent<Rigidbody2D>();
     _animator = GetComponent<Animator>();
-    _currentHealth = _maxHealth;
+    Heal(_maxHealth);
   }
 
   void Update () {
+    if (_invincibilityTimer > 0) {
+      _invincibilityTimer -= Time.deltaTime;
+      _invincibilityFlashCycleTimer -= Time.deltaTime;
+
+      if (_invincibilityFlashCycleTimer <= 0) {
+        _spriteRenderer.enabled = !_spriteRenderer.enabled;
+        _invincibilityFlashCycleTimer = _invincibilityFlashCycleTime;
+      }
+    } else {
+      _spriteRenderer.enabled = true;
+    }
+
     if (_rigidbody.velocity.magnitude > 0.01f) {
       _footstepTimer -= Time.deltaTime;
 
@@ -127,7 +144,7 @@ public class PlayerController : MonoBehaviour {
     if (context.performed) {
       if (_dice[5] >= 6) {
         AudioManager.Instance.PlaySfx("heal");
-        _currentHealth += 1;
+        Heal(1);
         RemoveDie(6, 6);
       }
     }
@@ -154,18 +171,24 @@ public class PlayerController : MonoBehaviour {
   }
 
   public void Damage (int damage) {
-    _currentHealth -= damage;
+    if (_invincibilityTimer <= 0) {
+      _currentHealth -= damage;
+      HealthUiController.Instance.UpdateHealth(_currentHealth);
 
-    if (_currentHealth <= 0) {
-      _currentHealth = 0;
-      gameObject.SetActive(false);
-      AudioManager.Instance.PlaySfx("losing sound");
-    } else {
-      AudioManager.Instance.PlaySfx("hit");
+      _invincibilityTimer = _invincibilityTime;
+
+      if (_currentHealth <= 0) {
+        _currentHealth = 0;
+        gameObject.SetActive(false);
+        AudioManager.Instance.PlaySfx("losing sound");
+      } else {
+        AudioManager.Instance.PlaySfx("hit");
+      }
     }
   }
 
   public void Heal (int amount) {
     _currentHealth = Mathf.Min(_currentHealth + amount, _maxHealth);
+    HealthUiController.Instance.UpdateHealth(_currentHealth);
   }
 }
