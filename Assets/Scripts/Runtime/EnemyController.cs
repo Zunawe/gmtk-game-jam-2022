@@ -68,6 +68,7 @@ public class EnemyController : MonoBehaviour {
   private void Die () {
     DiePickupController pickup = Instantiate(_diePickupPrefab, transform.position, Quaternion.identity);
     pickup.Value = Random.Range(1, 7);
+    AudioManager.Instance.PlaySfx("dice drop");
     Destroy(gameObject, 0.0f);
   }
 }
