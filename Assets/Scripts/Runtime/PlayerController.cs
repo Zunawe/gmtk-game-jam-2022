@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour {
 
   [Header("Melee")]
   [SerializeField] private MeleeSwingController _meleeSwingPrefab;
+  [SerializeField] private ExplosionController _explosionPrefab;
 
   private Rigidbody2D _rigidbody;
   private Animator _animator;
@@ -202,6 +203,16 @@ public class PlayerController : MonoBehaviour {
         AudioManager.Instance.PlaySfx("shop reroll");
         ShopController.Instance.RefreshShop();
         RemoveDie(4, 4);
+      }
+    }
+  }
+
+  public void OnBomb (InputAction.CallbackContext context) {
+    if (context.performed && Time.timeScale != 0) {
+      if (_dice[4] >= 5) {
+        ExplosionController explosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+        explosion.Size = 4;
+        RemoveDie(5, 5);
       }
     }
   }

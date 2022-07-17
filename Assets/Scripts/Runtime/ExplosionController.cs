@@ -9,7 +9,7 @@ public class ExplosionController : MonoBehaviour {
 
   void Start () {
     transform.localScale = new Vector3(Size, Size, Size);
-    AudioManager.Instance.PlaySfx("explosion");
+    AudioManager.Instance.PlaySfx("boom");
   }
 
   void Update () {
