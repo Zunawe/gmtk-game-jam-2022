@@ -47,13 +47,16 @@ public class PlayerController : MonoBehaviour {
   [SerializeField] private GameObject _reticle;
   [SerializeField] private ProjectileController _projectilePrefab;
 
+  [Header("Melee")]
+  [SerializeField] private MeleeSwingController _meleeSwingPrefab;
+
   private Rigidbody2D _rigidbody;
   private Animator _animator;
   [SerializeField] private SpriteRenderer _spriteRenderer;
   private bool _isFacingUp;
 
   private int[] _dice = new int[6];
-  public WeaponType _currentWeapon = WeaponType.CARD;
+  public WeaponType _currentWeapon = WeaponType.STICK;
 
   void Awake () {
     if (Instance == null) {
@@ -141,7 +144,8 @@ public class PlayerController : MonoBehaviour {
           projectile.Direction = _reticle.transform.localPosition;
           break;
         case WeaponType.STICK:
-          //
+          AudioManager.Instance.PlaySfx("dartthrow");
+          Instantiate(_meleeSwingPrefab, _reticle.transform.position, Quaternion.identity);
           break;
       }
     }
