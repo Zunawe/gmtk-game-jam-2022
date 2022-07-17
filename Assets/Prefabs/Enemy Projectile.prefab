@@ -142,6 +142,6 @@ MonoBehaviour:
   _moveSpeed: 6
   _damage: 1
   _spin: 1
-  _throwSoundName: 
+  _throwSoundName: diceshot
   _hitSoundName: 
   _travelSoundName: 
