@@ -7227,7 +7227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicContainer: {fileID: 1982314693}
   _sfxContainer: {fileID: 1715302327}
-  TestSfxName: purchase
+  TestSfxName: losing sound
   TestMusicName: 
 --- !u!4 &1072035122
 Transform:
