@@ -78,6 +78,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Bomb",
+                    "type": "Button",
+                    "id": "a2c4f503-4d0c-466a-a085-5141648eb38d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Heal",
                     "type": "Button",
                     "id": "667e59cc-0469-4e6c-a88d-be69d50b236b",
@@ -239,6 +248,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Buff",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a2be6d2e-b73a-48bb-aa93-636ce13b38db",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Bomb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
